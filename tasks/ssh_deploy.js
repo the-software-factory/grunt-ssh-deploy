@@ -51,13 +51,14 @@ module.exports = function(grunt) {
             port: 22,
             zip_deploy: false,
             max_buffer: 200 * 1024,
-            release_subdir: '/'
+            release_subdir: '/',
+            tag: timestamp
         };
 
         var options = extend({}, defaults, grunt.config.get('environments').options,
             grunt.config.get('environments')[this.args]['options']);
-        
-        var releasePath = path.posix.join(options.deploy_path, 'releases', options.release_subdir, timestamp);
+
+        var releasePath = path.posix.join(options.deploy_path, 'releases', options.release_subdir, releaseTag);
 
         // scp defaults
         client.defaults(getScpOptions(options));

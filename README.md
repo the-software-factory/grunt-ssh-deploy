@@ -98,6 +98,13 @@ Type: `String`
 
 Commands to run on the server before and after deploy directory is created and symlinked. 
 
+#### options.tag
+Type: `String|function`
+Default value: the current date (as a timestamp)
+
+The release tag, e.g. '1.2.3'. It can be a string or a function (in that case is called and the returned value will be
+used). It defaults to the current timestamp formatted as 'YYYYMMDDHHmmssSSS'.
+
 #### options.releases_to_keep
 Type: `Number`
 
